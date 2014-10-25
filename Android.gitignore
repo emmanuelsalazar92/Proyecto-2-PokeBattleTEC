@@ -11,6 +11,7 @@
 # Generated files
 bin/
 gen/
+libraries/
 
 # Gradle files
 .gradle/
