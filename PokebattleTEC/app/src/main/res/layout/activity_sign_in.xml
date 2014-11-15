@@ -1,0 +1,96 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="battletech.com.battletech.SignInActivity"
+    android:background="@android:color/holo_blue_dark">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Sign In"
+        android:id="@+id/tvEnemigo"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="@color/battletechtheme_color"
+        android:textSize="@android:dimen/notification_large_icon_width" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="E-mail"
+        android:id="@+id/tvNuestro"
+        android:layout_below="@+id/tvEnemigo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="63dp"
+        android:textSize="@dimen/LabelBattle"
+        android:textColor="@color/battletechtheme_color" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/etemailsign"
+        android:layout_below="@+id/tvNuestro"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@android:color/background_light"
+        android:textSize="@dimen/LabelBattle"
+        android:theme="@style/BattleTechTheme" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Password"
+        android:id="@+id/textView3"
+        android:textSize="@dimen/LabelBattle"
+        android:textColor="@color/battletechtheme_color"
+        android:layout_below="@+id/etemailsign"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/etpasswordsign"
+        android:background="@android:color/background_light"
+        android:textSize="@dimen/LabelBattle"
+        android:theme="@style/BattleTechTheme"
+        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
+        android:password="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign In"
+        android:id="@+id/btsignin"
+        android:layout_below="@+id/etpasswordsign"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:theme="@style/ButtonBattleTechTheme"
+        android:onClick="SingInBattle"
+        android:textSize="@dimen/LabelBattle" />
+
+    <ImageButton
+        android:layout_width="291dp"
+        android:layout_height="500dp"
+        android:id="@+id/imageButton"
+        android:layout_below="@+id/btsignin"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/background" />
+</RelativeLayout>

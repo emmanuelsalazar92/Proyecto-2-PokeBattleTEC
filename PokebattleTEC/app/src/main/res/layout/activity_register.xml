@@ -1,0 +1,112 @@
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+
+    android:background="@android:color/holo_blue_dark">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="New User"
+        android:id="@+id/tvEnemigo"
+        android:textSize="@android:dimen/notification_large_icon_width"
+        android:textColor="@color/battletechtheme_color"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="E-mail"
+        android:id="@+id/tvNuestro"
+        android:singleLine="false"
+        android:textColor="@color/battletechtheme_color"
+        android:textSize="@dimen/LabelBattle"
+        android:layout_below="@+id/tvEnemigo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="118dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/etemail"
+        android:textSize="@dimen/LabelBattle"
+        android:background="@android:color/background_light"
+        android:layout_below="@+id/tvNuestro"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Password"
+        android:id="@+id/textView3"
+        android:textColor="@color/battletechtheme_color"
+        android:textSize="@dimen/LabelBattle"
+        android:layout_below="@+id/etemail"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/etpassword"
+        android:textSize="@dimen/LabelBattle"
+        android:background="@android:color/background_light"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:password="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Re-enter Password"
+        android:id="@+id/textView4"
+        android:textColor="@color/battletechtheme_color"
+        android:textSize="@dimen/LabelBattle"
+        android:layout_below="@+id/etpassword"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/etpassword2"
+        android:textSize="@dimen/LabelBattle"
+        android:background="@android:color/background_light"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:password="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create User"
+        android:id="@+id/BtCreateUser"
+        android:layout_below="@+id/etpassword2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="NewUserCreate"
+        android:textSize="@dimen/LabelBattle" />
+</RelativeLayout>

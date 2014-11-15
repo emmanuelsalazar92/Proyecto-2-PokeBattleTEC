@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">PokeBattle</string>
+    <string name="app_name">Battle Tech</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="facebook_app_id">356010931233000</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_login_activity">Battle Tech</string>
+    <string name="title_activity_main">Battle Tech</string>
+    <string name="facebook_app_id">752656524782097</string>
+    <string name="title_activity_register">Battle Tech</string>
+    <string name="title_activity_sign_in">Battle Tech</string>
+    <string name="title_activity_choose_pokemon">Battle Tech</string>
+    <string name="title_activity_maps">Battle Tech</string>
+    <string name="title_activity_battle">Battle Tech</string>
 
 </resources>

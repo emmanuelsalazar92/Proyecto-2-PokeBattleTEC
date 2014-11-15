@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@android:color/holo_blue_dark"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Battle Tech Twitter Sign In"
+        android:id="@+id/tvEnemigo"
+        android:textColor="@color/battletechtheme_color"
+        android:textSize="@dimen/LabelBattle" />
+
+    <ImageButton
+        android:layout_width="400dp"
+        android:layout_height="325dp"
+        android:id="@+id/imageButton"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/twitterlogo" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign In with Twitter"
+        android:textSize="@dimen/LabelBattle" />
+
+    <ImageButton
+        android:layout_width="150dp"
+        android:layout_height="257dp"
+        android:id="@+id/imgNuestro"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/background" />
+</LinearLayout>
