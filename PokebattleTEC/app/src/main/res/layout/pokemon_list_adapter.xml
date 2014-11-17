@@ -5,10 +5,10 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:background="@android:color/holo_blue_dark">
+    android:background="@color/Fondo">
 
     <ImageView
-        android:id="@+id/icon"
+        android:id="@+id/picturepokemon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -20,20 +20,20 @@
         android:layout_width="fill_parent"
         android:layout_height="26dip"
         android:gravity="center_vertical"
-        android:textColor="@android:color/black"
+        android:textColor="@color/LetraColor"
         android:textSize="@dimen/PokemonAdapter"
         android:text="Name Pokemon"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/icon"
-        android:layout_toEndOf="@+id/icon" />
+        android:layout_toRightOf="@+id/picturepokemon"
+        android:layout_toEndOf="@+id/picturepokemon" />
     <TextView
-        android:id="@+id/idPokemon"
+        android:id="@+id/TypePokemon"
         android:layout_width="fill_parent"
         android:layout_height="26dip"
         android:gravity="center_vertical"
-        android:textColor="@android:color/black"
+        android:textColor="@color/LetraColor"
         android:textSize="@dimen/PokemonAdapter"
-        android:text="ID Pokemon"
+        android:text="Type Pokemon"
         android:layout_below="@+id/namePokemon"
         android:layout_alignLeft="@+id/namePokemon"
         android:layout_alignStart="@+id/namePokemon" />
@@ -43,35 +43,23 @@
         android:layout_width="fill_parent"
         android:layout_height="26dip"
         android:gravity="center_vertical"
-        android:textColor="@android:color/black"
+        android:textColor="@color/LetraColor"
         android:textSize="@dimen/PokemonAdapter"
         android:text="Weight Pokemon"
-        android:layout_below="@+id/idPokemon"
-        android:layout_toRightOf="@+id/icon"
-        android:layout_toEndOf="@+id/icon" />
+        android:layout_below="@+id/TypePokemon"
+        android:layout_toRightOf="@+id/picturepokemon"
+        android:layout_toEndOf="@+id/picturepokemon" />
 
     <TextView
         android:id="@+id/heightPokemon"
         android:layout_width="fill_parent"
         android:layout_height="26dip"
         android:gravity="center_vertical"
-        android:textColor="@android:color/black"
+        android:textColor="@color/LetraColor"
         android:textSize="@dimen/PokemonAdapter"
         android:text="Height Pokemon"
-        android:layout_below="@+id/attackPokemon"
-        android:layout_alignLeft="@+id/attackPokemon"
-        android:layout_alignStart="@+id/attackPokemon" />
-
-    <TextView
-        android:id="@+id/attackPokemon"
-        android:layout_width="fill_parent"
-        android:layout_height="26dip"
-        android:gravity="center_vertical"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/PokemonAdapter"
-        android:text="Attack Pokemon"
         android:layout_below="@+id/weightPokemon"
-        android:layout_toRightOf="@+id/icon"
-        android:layout_toEndOf="@+id/icon" />
+        android:layout_toRightOf="@+id/picturepokemon"
+        android:layout_toEndOf="@+id/picturepokemon" />
 
 </RelativeLayout>

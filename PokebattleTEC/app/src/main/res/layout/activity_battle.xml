@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:weightSum="1"
-    android:background="#ff9ee13d">
+    android:background="@color/Fondo">
 
     <TableLayout
         android:layout_width="match_parent"
@@ -21,10 +21,11 @@
                 android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Large Text"
-                android:id="@+id/tvEnemigo"
+                android:id="@+id/xTVTittle"
                 android:layout_column="0"
-                android:textColor="@color/battletechtheme_color"
-                android:textSize="@dimen/LabelBattle" />
+
+                android:textSize="@dimen/LabelBattle"
+                android:textColor="@color/LetraColor" />
 
         </TableRow>
 
@@ -40,7 +41,7 @@
                 android:layout_height="50dp"
                 android:id="@+id/pbprogresoEnemigo"
                 android:max="100"
-                android:background="#ff9ee13d"
+                android:background="@color/Fondo"
                 android:indeterminate="false"
                 android:maxHeight="55px"
                 android:minHeight="55px"
@@ -51,13 +52,15 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageButton"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="100/100"
+                android:id="@+id/puntosenemigo"
                 android:layout_column="0"
-                android:src="@drawable/izquierda"
-                android:background="#ff9ee13d" />
+                android:textSize="@dimen/LabelBattle"
+                android:gravity="center|center_vertical"
+                android:textColor="@color/LetraColor" />
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -65,7 +68,7 @@
                 android:id="@+id/imgEnemigo"
                 android:layout_column="1"
                 android:src="@drawable/p001"
-                android:background="#ff9ee13d" />
+                android:background="@color/Fondo" />
         </TableRow>
 
         <TableRow
@@ -119,11 +122,12 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Large Text"
-                android:id="@+id/tvNuestro"
+                android:id="@+id/xTVEmailSign"
                 android:layout_column="1"
-                android:textColor="@color/battletechtheme_color"
+
                 android:textSize="@dimen/LabelBattle"
-                android:gravity="bottom" />
+                android:gravity="bottom"
+                android:textColor="@color/LetraColor" />
         </TableRow>
 
         <TableRow
@@ -136,7 +140,7 @@
                 android:layout_height="50dp"
                 android:id="@+id/pbprogresoNuestro"
                 android:max="100"
-                android:background="#ff9ee13d"
+                android:background="@color/Fondo"
                 android:indeterminate="false"
                 android:layout_column="1"
                 android:maxHeight="55px"
@@ -159,15 +163,23 @@
                 android:id="@+id/imgNuestro"
                 android:layout_column="0"
                 android:src="@drawable/p022"
-                android:background="#ff9ee13d" />
+                android:background="@color/Fondo" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageButton3"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="100/100"
+                android:id="@+id/puntosnuestro"
                 android:layout_column="1"
-                android:src="@drawable/derecha"
-                android:background="#ff9ee13d" />
+                android:textSize="@dimen/LabelBattle"
+                android:gravity="center|center_vertical"
+                android:textColor="@color/LetraColor" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
 
         </TableRow>
 
@@ -213,6 +225,8 @@
             android:text="Attack"
             android:id="@+id/button2"
             android:textSize="@dimen/LabelBattle"
-            android:onClick="BattleAttack"/>
+            android:onClick="BattleAttack"
+            android:textColor="@color/Fondo"
+            android:background="@color/BotonColor" />
     </LinearLayout>
 </LinearLayout>

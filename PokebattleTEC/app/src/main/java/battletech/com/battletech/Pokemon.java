@@ -5,22 +5,17 @@ package battletech.com.battletech;
  */
 public class Pokemon {
 
-    private String _AttackPokemon;
+
     private String _HPPokemon;
     private String _TypePokemon;
     private String _HeightPokemon;
     private String _IDPokemon;
     private String _NamePokemon;
     private String _WeightPokemon;
+    private int _PicturePokemon;
 
 
-    public String get_AttackPokemon() {
-        return _AttackPokemon;
-    }
 
-    public void set_AttackPokemon(String _AttackPokemon) {
-        this._AttackPokemon = _AttackPokemon;
-    }
 
     public String get_HPPokemon() {
         return _HPPokemon;
@@ -68,5 +63,13 @@ public class Pokemon {
 
     public void set_WeightPokemon(String _WeightPokemon) {
         this._WeightPokemon = _WeightPokemon;
+    }
+
+    public int get_PicturePokemon() {
+        return _PicturePokemon;
+    }
+
+    public void set_PicturePokemon(int _PicturePokemon) {
+        this._PicturePokemon = _PicturePokemon;
     }
 }

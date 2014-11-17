@@ -17,8 +17,8 @@
         android:id="@+id/tvseleccion"
         android:textSize="@dimen/LabelBattle"
         android:textIsSelectable="false"
-        android:textColor="@color/battletechtheme_color"
-        android:gravity="left" />
+        android:gravity="left"
+        android:visibility="visible" />
 
     <AutoCompleteTextView
         android:layout_width="match_parent"
@@ -27,13 +27,28 @@
         android:layout_gravity="center_horizontal"
         android:completionThreshold="1"
         android:textSize="@dimen/LabelBattle"
-        android:background="@android:color/background_light" />
+        android:background="@android:color/background_light"
+        android:layout_margin="5dp" />
 
-    <Spinner
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spinner"
-        android:layout_gravity="center_horizontal" />
+        android:text="Search"
+        android:id="@+id/Search"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/BotonColor"
+        android:layout_margin="5dp"
+        android:textColor="@color/Fondo" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Advantage Search"
+        android:id="@+id/searchadvan"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/BotonColor"
+        android:layout_margin="5dp"
+        android:textColor="@color/Fondo" />
 
 
 </LinearLayout>

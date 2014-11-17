@@ -12,5 +12,10 @@
     <string name="title_activity_choose_pokemon">Battle Tech</string>
     <string name="title_activity_maps">Battle Tech</string>
     <string name="title_activity_battle">Battle Tech</string>
+    <string name="ssap">edomadriz@gmail.com</string>
+    <string name="liame">edomadriz1234</string>
+    <color name="Fondo">#33B5E5</color>
+    <color name="LetraColor">#137498</color>
+    <color name="BotonColor">#985103</color>
 
 </resources>

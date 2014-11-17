@@ -6,8 +6,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="battletech.com.battletech.SignInActivity"
-    android:background="@android:color/holo_blue_dark">
+    tools:context="battletech.com.battletech.BattleTechActivitySignIn"
+    android:background="@color/Fondo">
 
 
     <TextView
@@ -15,76 +15,77 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Sign In"
-        android:id="@+id/tvEnemigo"
+        android:id="@+id/xTVTittle"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:textColor="@color/battletechtheme_color"
-        android:textSize="@android:dimen/notification_large_icon_width" />
+        android:textSize="@android:dimen/notification_large_icon_width"
+        android:textColor="@color/LetraColor" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="E-mail"
-        android:id="@+id/tvNuestro"
-        android:layout_below="@+id/tvEnemigo"
+        android:id="@+id/xTVEmailSign"
+        android:layout_below="@+id/xTVTittle"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="63dp"
         android:textSize="@dimen/LabelBattle"
-        android:textColor="@color/battletechtheme_color" />
+        android:textColor="@color/LetraColor" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/etemailsign"
-        android:layout_below="@+id/tvNuestro"
+        android:id="@+id/xETEmailSign"
+        android:layout_below="@+id/xTVEmailSign"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="@android:color/background_light"
         android:textSize="@dimen/LabelBattle"
-        android:theme="@style/BattleTechTheme" />
+        android:textColor="@color/LetraColor" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Password"
-        android:id="@+id/textView3"
+        android:id="@+id/xTVPasswordSign"
         android:textSize="@dimen/LabelBattle"
-        android:textColor="@color/battletechtheme_color"
-        android:layout_below="@+id/etemailsign"
+        android:layout_below="@+id/xETEmailSign"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/LetraColor" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/etpasswordsign"
+        android:id="@+id/xETPasswordSign"
         android:background="@android:color/background_light"
         android:textSize="@dimen/LabelBattle"
-        android:theme="@style/BattleTechTheme"
-        android:layout_below="@+id/textView3"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_alignStart="@+id/textView3"
-        android:password="true" />
+        android:layout_below="@+id/xTVPasswordSign"
+        android:layout_alignLeft="@+id/xTVPasswordSign"
+        android:layout_alignStart="@+id/xTVPasswordSign"
+        android:password="true"
+        android:textColor="@color/LetraColor" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sign In"
         android:id="@+id/btsignin"
-        android:layout_below="@+id/etpasswordsign"
+        android:layout_below="@+id/xETPasswordSign"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:theme="@style/ButtonBattleTechTheme"
         android:onClick="SingInBattle"
-        android:textSize="@dimen/LabelBattle" />
+        android:textSize="@dimen/LabelBattle"
+        android:background="@color/BotonColor"
+        android:textColor="@color/LetraColor" />
 
     <ImageButton
         android:layout_width="291dp"

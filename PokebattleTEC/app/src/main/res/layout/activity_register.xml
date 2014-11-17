@@ -7,45 +7,48 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
 
-    android:background="@android:color/holo_blue_dark">
+    android:background="@color/Fondo">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="New User"
-        android:id="@+id/tvEnemigo"
+        android:id="@+id/xTVTittle"
         android:textSize="@android:dimen/notification_large_icon_width"
-        android:textColor="@color/battletechtheme_color"
+
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="@color/LetraColor" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="E-mail"
-        android:id="@+id/tvNuestro"
+        android:id="@+id/xTVEmail"
         android:singleLine="false"
-        android:textColor="@color/battletechtheme_color"
+
         android:textSize="@dimen/LabelBattle"
-        android:layout_below="@+id/tvEnemigo"
+        android:layout_below="@+id/xTVTittle"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="118dp" />
+        android:layout_marginTop="118dp"
+        android:textColor="@color/LetraColor" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/etemail"
+        android:id="@+id/xETEmail"
         android:textSize="@dimen/LabelBattle"
         android:background="@android:color/background_light"
-        android:layout_below="@+id/tvNuestro"
+        android:layout_below="@+id/xTVEmail"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="@color/LetraColor" />
 
 
 
@@ -54,59 +57,64 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Password"
-        android:id="@+id/textView3"
-        android:textColor="@color/battletechtheme_color"
+        android:id="@+id/xTVPassword"
         android:textSize="@dimen/LabelBattle"
-        android:layout_below="@+id/etemail"
+        android:layout_below="@+id/xETEmail"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="@color/LetraColor" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/etpassword"
+        android:id="@+id/xETPasswordOne"
         android:textSize="@dimen/LabelBattle"
         android:background="@android:color/background_light"
-        android:layout_below="@+id/textView3"
+        android:layout_below="@+id/xTVPassword"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:password="true" />
+        android:password="true"
+        android:textColor="@color/LetraColor" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Re-enter Password"
-        android:id="@+id/textView4"
-        android:textColor="@color/battletechtheme_color"
+        android:id="@+id/xTVPasswordTwo"
+
         android:textSize="@dimen/LabelBattle"
-        android:layout_below="@+id/etpassword"
+        android:layout_below="@+id/xETPasswordOne"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="@color/LetraColor" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/etpassword2"
+        android:id="@+id/xETPasswordTwo"
         android:textSize="@dimen/LabelBattle"
         android:background="@android:color/background_light"
-        android:layout_below="@+id/textView4"
+        android:layout_below="@+id/xTVPasswordTwo"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:password="true" />
+        android:password="true"
+        android:textColor="@color/LetraColor" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Create User"
-        android:id="@+id/BtCreateUser"
-        android:layout_below="@+id/etpassword2"
+        android:id="@+id/xBCreateUser"
+        android:layout_below="@+id/xETPasswordTwo"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:onClick="NewUserCreate"
-        android:textSize="@dimen/LabelBattle" />
+        android:textSize="@dimen/LabelBattle"
+        android:textColor="@color/Fondo"
+        android:background="@color/BotonColor" />
 </RelativeLayout>

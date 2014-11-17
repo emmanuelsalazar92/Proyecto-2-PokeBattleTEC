@@ -1,8 +1,13 @@
+
+
+
 package battletech.com.battletech;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,22 +16,37 @@ import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
+import org.apache.http.StatusLine;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 
 public class BattleActivity extends Activity {
-
     public ProgressBar _ourProgress;
     public ProgressBar _enemyProgress;
     int _enemyStatus = 100;
+    int experiencia = 30;
     int _ourStatus = 100;
+    int Experiecne;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_battle);
         Intent act = getIntent();
-        TextView _enemigo = (TextView) findViewById(R.id.tvEnemigo);
+        TextView _enemigo = (TextView) findViewById(R.id.xTVTittle);
         _enemigo.setText(act.getStringExtra("PokemonEnemigo"));
-        TextView _nuestro = (TextView) findViewById(R.id.tvNuestro);
+        TextView _nuestro = (TextView) findViewById(R.id.xTVEmailSign);
         _nuestro.setText(act.getStringExtra("PokemonNuestro"));
 
         ImageButton _imgEnemigo = (ImageButton) findViewById(R.id.imgEnemigo);
@@ -36,53 +56,58 @@ public class BattleActivity extends Activity {
 
 
         _ourProgress = (ProgressBar) findViewById(R.id.pbprogresoNuestro);
-//        _ourProgress.setMax(100);
         _ourProgress.setProgress(_ourStatus);
-
         _enemyProgress = (ProgressBar) findViewById(R.id.pbprogresoEnemigo);
-  //      _enemyProgress.setMax(100);
         _enemyProgress.setProgress(_enemyStatus);
+
+        new GetExperience().execute();
+
+
+        Log.d("ACTIVIDAD",Integer.toString(Experiecne));
 
     }
     @Override
     public  void onBackPressed() {
         super.onBackPressed();
-        Intent act = new Intent(this, MainActivity.class);
+        Intent act = new Intent(this, BattleTechActivityMain.class);
         startActivity(act);
 
     }
-    public void BattleAttack(View pview)
-    {
-        /////
+    public int randInt(int min, int max) {
 
-        _enemyStatus -= 10;
-        _enemyProgress.setProgress(_enemyStatus);
+        // NOTE: Usually this should be a field rather than a method
+        // variable so that it is not re-seeded every call.
+        Random rand = new Random();
 
+        // nextInt is normally exclusive of the top value,
+        // so add 1 to make it inclusive
+        int randomNum = rand.nextInt((max - min) + 1) + min;
 
-        /////
-
-        _ourStatus -= 7;
-        _ourProgress.setProgress(_ourStatus);
+        return randomNum;
     }
 
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.battle, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+    public void BattleAttack(View pview) {
+        TextView _enemigo = (TextView) findViewById(R.id.puntosenemigo);
+        TextView _nuestro = (TextView) findViewById(R.id.puntosnuestro);
+        int randomEn = randInt(0, 5);
+        int randomAm = randInt(0, 10);
+        int ataqueen = (experiencia / 10) * randomAm; //random entre 0-10
+        int ataqueam = (experiencia / 10) * randomEn; //random entre 0-10
+        if (_enemyStatus > 0 && _ourStatus > 0) {
+            _enemyStatus -= ataqueen;
+            _ourStatus -= ataqueam;
+            _enemigo.setText(Integer.toString(_enemyStatus) + "/100");
+            _nuestro.setText(Integer.toString(_ourStatus) + "/100");
+        } else if (_enemyStatus <= 0) {
+            new PostPokemonBattle(this, "1", getString(R.string.ssap), 1).execute("1");
+            Intent ac = new Intent(this, BattleTechActivityMain.class);
+            ac.putExtra("usuario", "2");
+            startActivity(ac);
         }
-        return super.onOptionsItemSelected(item);
+        else {new PostPokemonBattle(this,"1",getString(R.string.ssap),0).execute("1");
+            Intent ac = new Intent(this, BattleTechActivityMain.class);
+            ac.putExtra("usuario", "2");
+            startActivity(ac);}
     }
-}
+
+    }

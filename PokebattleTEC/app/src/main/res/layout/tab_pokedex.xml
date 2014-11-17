@@ -2,11 +2,44 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/Fondo">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:stretchColumns="0,1">
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order by Height"
+                android:id="@+id/button4"
+                android:layout_column="0"
+                android:background="@color/BotonColor"
+                android:textColor="@color/Fondo"
+                android:padding="3dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order by Weight"
+                android:id="@+id/button3"
+                android:layout_column="1"
+                android:background="@color/BotonColor"
+                android:textColor="@color/Fondo"
+                android:padding="3dp" />
+        </TableRow>
+    </TableLayout>
 
     <ListView
-        android:id="@+id/list"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"/>
+        android:id="@+id/listPokedex"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

@@ -60,8 +60,8 @@ public class MapsActivity extends FragmentActivity{
     double latitude;
     double longitude;
     GPSTracker gps;
-    LatLng _Ubicacion001 = new LatLng(9.856918,-83.912948); //CIC
-    //LatLng _Ubicacion001 = new LatLng(9.856357, -83.912569); //B3
+    //LatLng _Ubicacion001 = new LatLng(9.856918,-83.912948); //CIC
+    LatLng _Ubicacion001 = new LatLng(9.856357, -83.912569); //B3
 
     LatLng _Ubicacion002 = new LatLng(9.855946,-83.912612); //
     LatLng _Ubicacion003 = new LatLng(9.855124,-83.909478); //

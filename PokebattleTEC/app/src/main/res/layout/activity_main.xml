@@ -17,8 +17,7 @@
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:theme="@style/TabBattleTechTheme"
-                android:background="@color/battletechtheme_color">
+                android:background="@color/BotonColor">
             </TabWidget>
             <!-- container of tabs -->
             <FrameLayout
@@ -49,14 +48,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     layout="@layout/tab_battledex" >
-                </include>
-                <!-- tab N°2 -->
-                <!-- Inclusion of the interface -->
-                <include
-                    android:id="@+id/tabInfo"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    layout="@layout/tab_info" >
                 </include>
                 <!-- tab N°2 -->
                 <!-- Inclusion of the interface -->

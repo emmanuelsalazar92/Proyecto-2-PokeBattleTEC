@@ -41,7 +41,11 @@ public class PokemonListAdapter extends BaseAdapter {
         if(convertView==null){
             vi = inflater.inflate(R.layout.pokemon_list_adapter, null);
             holder=new ViewHolder();
-            holder.name = (TextView)vi.findViewById(R.id.namePokemon);
+            holder.PName = (TextView)vi.findViewById(R.id.namePokemon);
+            holder.PHeight = (TextView)vi.findViewById(R.id.heightPokemon);
+            holder.PWeight = (TextView)vi.findViewById(R.id.weightPokemon);
+            holder.PType = (TextView)vi.findViewById(R.id.TypePokemon);
+            holder.PPicture = (ImageView)vi.findViewById(R.id.picturepokemon);
             //holder.image = (ImageView)vi.findViewById(R.id.icon);
             vi.setTag(holder);
         }else{
@@ -51,7 +55,11 @@ public class PokemonListAdapter extends BaseAdapter {
         Pokemon item = new Pokemon();
         item = _Pokemon.get(position);
 
-        holder.name.setText(item.get_NamePokemon());
+        holder.PName.setText(item.get_NamePokemon());
+        holder.PHeight.setText("Height " + item.get_HeightPokemon());
+        holder.PWeight.setText("Weight " + item.get_WeightPokemon());
+        holder.PType.setText(item.get_TypePokemon());
+        holder.PPicture.setImageResource(item.get_PicturePokemon());
         //Picasso.with(_Activity).load(item.getImage()).into(holder.image);
         return vi;
     }
@@ -63,7 +71,11 @@ public class PokemonListAdapter extends BaseAdapter {
 
     public class ViewHolder
     {
-        TextView name;
-        ImageView image;
+        TextView PName;
+        TextView PHeight;
+        TextView PWeight;
+        TextView PType;
+        ImageView PPicture;
+
     }
 }

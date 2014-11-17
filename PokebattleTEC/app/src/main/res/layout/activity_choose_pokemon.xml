@@ -6,8 +6,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="battletech.com.battletech.MainActivity"
-    android:background="@android:color/holo_blue_dark">
+    tools:context="battletech.com.battletech.BattleTechActivityMain"
+    android:background="@color/Fondo">
 
 
     <TextView
@@ -15,66 +15,73 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Choose a Pokemon"
-        android:id="@+id/tvEnemigo"
-        android:textColor="@color/battletechtheme_color"
+        android:id="@+id/xTVTittle"
+
         android:textSize="@android:dimen/app_icon_size"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/LetraColor" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imgNuestro"
-        android:layout_below="@+id/tvEnemigo"
+        android:id="@+id/xBulbasaur"
+        android:layout_below="@+id/xTVTittle"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="90dp"
-        android:background="@drawable/p001" />
+        android:background="@drawable/p001"
+        android:onClick="BulbasaurOnClick"/>
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton3"
+        android:id="@+id/xCharmander"
         android:background="@drawable/p004"
-        android:layout_alignBottom="@+id/imgNuestro"
+        android:layout_alignBottom="@+id/xBulbasaur"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:onClick="ChamanderOnClick"/>
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton4"
+        android:id="@+id/xSquirtle"
         android:layout_marginTop="93dp"
         android:background="@drawable/p007"
-        android:layout_below="@+id/imgNuestro"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/xBulbasaur"
+        android:layout_centerHorizontal="true"
+        android:onClick="SquirtleOnClick"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bulbasaur"
-        android:id="@+id/tvNuestro"
+        android:id="@+id/xTVEmailSign"
         android:textSize="@dimen/LabelBattle"
-        android:layout_below="@+id/imgNuestro"
+        android:layout_below="@+id/xBulbasaur"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="@color/LetraColor" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Charmander"
-        android:id="@+id/textView3"
+        android:id="@+id/xTVPasswordSign"
         android:textSize="@dimen/LabelBattle"
-        android:layout_below="@+id/imageButton3"
-        android:layout_alignRight="@+id/imageButton3"
-        android:layout_alignEnd="@+id/imageButton3" />
+        android:layout_below="@+id/xCharmander"
+        android:layout_alignRight="@+id/xCharmander"
+        android:layout_alignEnd="@+id/xCharmander"
+        android:textColor="@color/LetraColor" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Squirtle"
-        android:id="@+id/textView4"
+        android:id="@+id/xTVPasswordTwo"
         android:textSize="@dimen/LabelBattle"
-        android:layout_below="@+id/imageButton4"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/xSquirtle"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/LetraColor" />
 </RelativeLayout>
