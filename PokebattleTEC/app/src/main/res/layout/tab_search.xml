@@ -48,7 +48,8 @@
         android:layout_gravity="center_horizontal"
         android:background="@color/BotonColor"
         android:layout_margin="5dp"
-        android:textColor="@color/Fondo" />
+        android:textColor="@color/Fondo"
+        android:onClick="BusquedaAd"/>
 
 
 </LinearLayout>

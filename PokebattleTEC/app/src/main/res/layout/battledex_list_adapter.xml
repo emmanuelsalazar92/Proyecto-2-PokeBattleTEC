@@ -27,7 +27,8 @@
             android:id="@+id/tvNombre"
             android:layout_column="1"
             android:textColor="@color/LetraColor"
-            android:textSize="@dimen/abc_action_button_min_width_overflow_material" />
+            android:textSize="@dimen/abc_action_button_min_width_overflow_material"
+            android:background="@color/BotonColor" />
 
         <TextView
             android:layout_width="wrap_content"

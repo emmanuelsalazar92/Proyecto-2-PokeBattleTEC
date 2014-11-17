@@ -60,8 +60,8 @@ public class MapsActivity extends FragmentActivity{
     double latitude;
     double longitude;
     GPSTracker gps;
-    //LatLng _Ubicacion001 = new LatLng(9.856918,-83.912948); //CIC
-    LatLng _Ubicacion001 = new LatLng(9.856357, -83.912569); //B3
+    LatLng _Ubicacion001 = new LatLng(9.856918,-83.912948); //CIC
+    //LatLng _Ubicacion001 = new LatLng(9.856357, -83.912569); //B3
 
     LatLng _Ubicacion002 = new LatLng(9.855946,-83.912612); //
     LatLng _Ubicacion003 = new LatLng(9.855124,-83.909478); //
@@ -82,7 +82,7 @@ public class MapsActivity extends FragmentActivity{
     LatLng _Ubicacion018 = new LatLng(9.853655,-83.907922); //
     LatLng _Ubicacion019 = new LatLng(9.852778,-83.9063); //
     LatLng _Ubicacion020 = new LatLng(9.857476,-83.911567); //
-
+int usuarioPo;
 
     LatLng[] _PokemonLocation={_Ubicacion001,_Ubicacion002,_Ubicacion003,_Ubicacion004,_Ubicacion005,
             _Ubicacion006,_Ubicacion007,_Ubicacion008,_Ubicacion009,_Ubicacion010,
@@ -91,7 +91,8 @@ public class MapsActivity extends FragmentActivity{
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
     private CameraUpdate mCamera;
 
-
+    int[] _us1 = {30,5,10,20,67,87,45,12,34,90,78,45,31,13,16,17,13,12,11,10};
+    int[] _us2 = {56,45,47,48,49,40,23,14,26,41,51,58,69,97,113,111,116,120,140,130};
 
     int[] _PokemonList={127,138,13,121,110,
             135     ,58   ,  149 ,    63,     67,
@@ -134,6 +135,8 @@ public class MapsActivity extends FragmentActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+        Intent act = getIntent();
+        usuarioPo =  Integer.parseInt(act.getStringExtra("usuario"));
 
         gps = new GPSTracker(MapsActivity.this);
 
@@ -214,7 +217,19 @@ public class MapsActivity extends FragmentActivity{
         for(int x=0;x<20;x++)
         {
             medir = SphericalUtil.computeDistanceBetween(myLocation,_PokemonLocation[x]);
-            if(25>medir){_UbicacionDetectada = true;_idPokemon=_PokemonList[x];}
+            if(25>medir){
+
+                if(usuarioPo==1)
+                {
+                _UbicacionDetectada = true;_idPokemon=_us1[x];}
+                if(usuarioPo==2)
+                {
+                    _UbicacionDetectada = true;_idPokemon=_us2[x];}
+                if(usuarioPo==3)
+                {
+                    _UbicacionDetectada = true;_idPokemon=_PokemonList[x];}
+
+            }
         }
         if(_UbicacionDetectada == false)
         {
@@ -225,12 +240,15 @@ public class MapsActivity extends FragmentActivity{
         }
         else
         {
+            int[] _pokemon={1,4,7};
             Log.d("MapsActivity","Hora de Batallar " + Integer.toString(_idPokemon));
             Intent act = new Intent(this, BattleActivity.class);
+            act.putExtra("usuario",Integer.toString(usuarioPo));
+            act.putExtra("enemigo",Integer.toString(_idPokemon));
             act.putExtra("PokemonEnemigo",getPokemonName(_idPokemon));
-            act.putExtra("PokemonNuestro",getPokemonName(6));
+            act.putExtra("PokemonNuestro",getPokemonName(_pokemon[usuarioPo-1]));
             act.putExtra("ImagenPokemonEnemigo",Integer.toString(getPokemonImage(_idPokemon)));
-            act.putExtra("ImagenPokemonNuestro",Integer.toString(getPokemonImage(6)));
+            act.putExtra("ImagenPokemonNuestro",Integer.toString(getPokemonImage(_pokemon[usuarioPo-1])));
             startActivity(act);
         }
 

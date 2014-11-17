@@ -190,6 +190,7 @@ public class BattleTechActivityMain extends Activity implements TextWatcher
         public void ShowMapOBattle(View pView)
             {
                 Intent _IMapsActivity = new Intent(this, MapsActivity.class);
+                _IMapsActivity.putExtra("usuario",Integer.toString(_IPokemonUserID));
                 startActivity(_IMapsActivity);
             }
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -317,6 +318,7 @@ public class BattleTechActivityMain extends Activity implements TextWatcher
                 super.onRestart();
                 Log.d("BattleTech", "MAIN--On Restart");
             }
+
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //++++NOMBRE.........................................................
 //..........onDestroy
@@ -333,4 +335,14 @@ public class BattleTechActivityMain extends Activity implements TextWatcher
                 super.onDestroy();
                 Log.d("BattleTech", "MAIN--On Destroy");
             }
+
+
+        public void BusquedaAd(View pview)
+        {
+            Intent act = new Intent(this,AdvanceSearch.class);
+
+            startActivity(act);
+        }
+
+
     }

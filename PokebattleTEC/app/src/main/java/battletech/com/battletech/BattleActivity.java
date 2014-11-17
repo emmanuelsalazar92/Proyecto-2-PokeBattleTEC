@@ -38,6 +38,8 @@ public class BattleActivity extends Activity {
     int experiencia = 30;
     int _ourStatus = 100;
     int Experiecne;
+    int enemigo;
+    int usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,8 @@ public class BattleActivity extends Activity {
         _enemigo.setText(act.getStringExtra("PokemonEnemigo"));
         TextView _nuestro = (TextView) findViewById(R.id.xTVEmailSign);
         _nuestro.setText(act.getStringExtra("PokemonNuestro"));
+        enemigo = Integer.parseInt(act.getStringExtra("enemigo"));
+        usuario = Integer.parseInt(act.getStringExtra("usuario"));
 
         ImageButton _imgEnemigo = (ImageButton) findViewById(R.id.imgEnemigo);
         _imgEnemigo.setImageResource(Integer.parseInt(act.getStringExtra("ImagenPokemonEnemigo")));
@@ -98,13 +102,14 @@ public class BattleActivity extends Activity {
             _ourStatus -= ataqueam;
             _enemigo.setText(Integer.toString(_enemyStatus) + "/100");
             _nuestro.setText(Integer.toString(_ourStatus) + "/100");
-        } else if (_enemyStatus <= 0) {
-            new PostPokemonBattle(this, "1", getString(R.string.ssap), 1).execute("1");
+        } else if (_enemyStatus <= 0)
+        {
+            new PostPokemonBattle(this, enemigo, getString(R.string.ssap), 1,usuario).execute("1");
             Intent ac = new Intent(this, BattleTechActivityMain.class);
             ac.putExtra("usuario", "2");
             startActivity(ac);
         }
-        else {new PostPokemonBattle(this,"1",getString(R.string.ssap),0).execute("1");
+        else {new PostPokemonBattle(this,enemigo,getString(R.string.ssap),0,usuario).execute("1");
             Intent ac = new Intent(this, BattleTechActivityMain.class);
             ac.putExtra("usuario", "2");
             startActivity(ac);}

@@ -40,15 +40,17 @@ package battletech.com.battletech;
      */
     public class PostPokemonBattle extends AsyncTask<String, String, String>{
 
-        String _SPokemonIDChosen;
+        int _SPokemonIDChosen;
         String _SPokemonUserEmail;
         int _resultado;
-        public PostPokemonBattle(BattleActivity activity,String id,String email,int result)
+        int _user;
+        public PostPokemonBattle(BattleActivity activity,int id,String email,int result,int user)
         {
 
             this._SPokemonIDChosen = id;
             this._SPokemonUserEmail = email;
             this._resultado = result;
+            this._user = user;
         }
 
         @Override
@@ -59,7 +61,7 @@ package battletech.com.battletech;
         protected String doInBackground(String... params) {
 
             InputStream inputStream = null;
-            String result = "";
+            //String result = ;
 
             try {
 
@@ -72,10 +74,11 @@ package battletech.com.battletech;
                 String json = "";
                 // 3. build jsonObject
                 JSONObject jsonObject = new JSONObject();
-                jsonObject.put("pokemon",2); //numero del pokemon -+-+-+-+-+-+-+
-                jsonObject.put("user_id", "1"); //numero de usuario -+-+-+-+-+-+-+-+-+
-                jsonObject.put("experience","90");
-                jsonObject.put("result",result);
+               // Log.d("++++++++++++++++++++++", _resultado);
+                jsonObject.put("pokemon",_SPokemonIDChosen); //numero del pokemon -+-+-+-+-+-+-+
+                jsonObject.put("user_id", _user); //numero de usuario -+-+-+-+-+-+-+-+-+
+                jsonObject.put("experience","35");
+                jsonObject.put("result",_resultado);
                 Log.d("++++++++++++++++++++++", "POST");
 
 

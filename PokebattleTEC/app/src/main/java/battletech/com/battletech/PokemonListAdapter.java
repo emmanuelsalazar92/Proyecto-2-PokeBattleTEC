@@ -2,12 +2,16 @@ package battletech.com.battletech;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.view.View;
+import android.view.View.OnClickListener;
 
 import java.util.List;
 
@@ -35,7 +39,7 @@ public class PokemonListAdapter extends BaseAdapter {
         return position;
     }
 
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         View vi=convertView;
         ViewHolder holder;
         if(convertView==null){
@@ -61,6 +65,28 @@ public class PokemonListAdapter extends BaseAdapter {
         holder.PType.setText(item.get_TypePokemon());
         holder.PPicture.setImageResource(item.get_PicturePokemon());
         //Picasso.with(_Activity).load(item.getImage()).into(holder.image);
+
+
+
+
+
+        vi.setOnClickListener(new OnClickListener()
+        {
+            @Override
+            public void onClick(View arg0)
+            {
+                Intent _Intent = new Intent(_Activity, DetailActivity.class);
+                _Intent.putExtra("Nombre", (_Pokemon.get(position).get_NamePokemon()));
+                _Intent.putExtra("Height", (_Pokemon.get(position).get_HeightPokemon()));
+                _Intent.putExtra("Weight", (_Pokemon.get(position).get_WeightPokemon()));
+                _Intent.putExtra("Type", (_Pokemon.get(position).get_TypePokemon()));
+                _Intent.putExtra("FOTO",Integer.toString((_Pokemon.get(position).get_PicturePokemon())));
+                _Activity.startActivity(_Intent);
+            }
+        });
+
+
+
         return vi;
     }
 
